@@ -374,16 +374,19 @@ button {
 .hero-container {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3xl);
+    display: flex;
+    justify-content: center;
     align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    align-items: center;
+    text-align: center;
 }
 
 .hero-badge {
