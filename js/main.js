@@ -2,7 +2,7 @@
 // PORTFOLIO JAVASCRIPT
 // ===================================
 
-// Wait for DOM to be fully loaded
+// Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initScrollAnimations();
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ===================================
-// CONTACT MODAL
+// MODAL DE CONTACTO
 // ===================================
 function initContactModal() {
     const modal = document.getElementById('contactModal');
@@ -20,40 +20,40 @@ function initContactModal() {
 
     if (!modal) return;
 
-    // Open modal
+    // Abrir modal
     openBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             modal.style.display = 'block';
-            // Slight delay to allow display:block to apply before adding show class for transition
+            // Pequeño retraso para permitir que display:block se aplique antes de añadir la clase show para la transición
             setTimeout(() => {
                 modal.classList.add('show');
             }, 10);
         });
     });
 
-    // Close modal function
+    // Función cerrar modal
     function closeModal() {
         modal.classList.remove('show');
-        // Wait for transition to finish before hiding
+        // Esperar a que termine la transición antes de ocultar
         setTimeout(() => {
             modal.style.display = 'none';
         }, 300);
     }
 
-    // Close on x button
+    // Cerrar en botón x
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
     }
 
-    // Close on outside click
+    // Cerrar al hacer clic fuera
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
 
-    // Close on Escape key
+    // Cerrar con tecla Escape
     window.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('show')) {
             closeModal();
@@ -62,7 +62,7 @@ function initContactModal() {
 }
 
 // ===================================
-// NAVIGATION
+// NAVEGACIÓN
 // ===================================
 function initNavigation() {
     const navbar = document.getElementById('navbar');
@@ -70,7 +70,7 @@ function initNavigation() {
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Navbar scroll effect
+    // Efecto scroll barra de navegación
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -79,13 +79,13 @@ function initNavigation() {
         }
     });
 
-    // Mobile menu toggle
+    // Alternar menú móvil
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
+    // Cerrar menú móvil al hacer clic en un enlace
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -93,7 +93,7 @@ function initNavigation() {
         });
     });
 
-    // Highlight active section in navigation
+    // Resaltar sección activa en navegación
     const sections = document.querySelectorAll('section[id]');
 
     window.addEventListener('scroll', () => {
@@ -118,45 +118,35 @@ function initNavigation() {
 }
 
 // ===================================
-// THEME TOGGLE
+// CAMBIO DE TEMA
 // ===================================
 
 
 // ===================================
-// SCROLL ANIMATIONS
+// ANIMACIONES DE SCROLL
 // ===================================
 function initScrollAnimations() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -20px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
+                entry.target.classList.add('active');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all sections and cards
-    const elementsToAnimate = document.querySelectorAll(`
-    .section-header,
-    .about-content,
-    .project-card,
-    .skill-category,
-    .achievement-card
-  `);
+    const elementsToAnimate = document.querySelectorAll('.reveal');
 
     elementsToAnimate.forEach(el => {
         observer.observe(el);
     });
 }
 
-// ===================================
-// SMOOTH SCROLL
-// ===================================
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -181,16 +171,16 @@ function initSmoothScroll() {
 }
 
 // ===================================
-// PROJECT CARD INTERACTIONS
+// INTERACCIONES TARJETA PROYECTO
 // ===================================
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', (e) => {
-        // If clicking on the link, let it handle the navigation
+        // Si se hace clic en el enlace, dejar que maneje la navegación
         if (e.target.closest('.project-link')) {
             return;
         }
 
-        // Otherwise, click the link programmatically
+        // De lo contrario, hacer clic en el enlace programáticamente
         const link = card.querySelector('.project-link');
         if (link) {
             link.click();
@@ -199,7 +189,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 });
 
 // ===================================
-// TYPING EFFECT FOR HERO (Optional Enhancement)
+// EFECTO DE ESCRITURA PARA HÉROE (Mejora Opcional)
 // ===================================
 function initTypingEffect() {
     const roles = [
@@ -243,12 +233,12 @@ function initTypingEffect() {
         setTimeout(type, timeout);
     }
 
-    // Uncomment to enable typing effect
+    // Descomentar para habilitar efecto de escritura
     // type();
 }
 
 // ===================================
-// PARALLAX EFFECT FOR GRADIENT ORBS
+// EFECTO PARALLAX PARA ORBES DE GRADIENTE
 // ===================================
 function initParallax() {
     const orbs = document.querySelectorAll('.gradient-orb');
@@ -267,14 +257,14 @@ function initParallax() {
     });
 }
 
-// Initialize parallax effect
+// Inicializar efecto parallax
 initParallax();
 
 // ===================================
-// PERFORMANCE OPTIMIZATION
+// OPTIMIZACIÓN DE RENDIMIENTO
 // ===================================
 
-// Lazy load images (if you add images later)
+// Carga diferida de imágenes (si se añaden imágenes después)
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
 
@@ -292,8 +282,4 @@ function initLazyLoading() {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// ===================================
-// CONSOLE MESSAGE
-// ===================================
-console.log('%c👋 Hola! Bienvenido a mi portafolio', 'color: #6366f1; font-size: 20px; font-weight: bold;');
-console.log('%c¿Interesado en el código? Visita: https://github.com/zkin1', 'color: #8b5cf6; font-size: 14px;');
+
