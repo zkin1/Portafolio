@@ -2,36 +2,36 @@
    CSS VARIABLES & DESIGN TOKENS
    =================================== */
 :root {
-    /* Colors - Dark Mode Primary */
-    --bg-primary: #0a0e27;
-    --bg-secondary: #111827;
-    --bg-tertiary: #1a1f3a;
-    --bg-card: #151b33;
+    /* Colors - Professional Light Mode */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-card: #ffffff;
 
-    /* Accent Colors */
-    --accent-primary: #6366f1;
-    --accent-secondary: #8b5cf6;
-    --accent-tertiary: #ec4899;
+    /* Accent Colors - Professional Blues */
+    --accent-primary: #2563eb;
+    --accent-secondary: #1e40af;
+    --accent-tertiary: #0ea5e9;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-    --gradient-secondary: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-    --gradient-orb: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    /* Gradients - Subtle Professional */
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+    --gradient-secondary: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    --gradient-orb: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
 
     /* Text Colors */
-    --text-primary: #f9fafb;
-    --text-secondary: #d1d5db;
-    --text-tertiary: #9ca3af;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #64748b;
 
     /* Borders */
-    --border-color: rgba(255, 255, 255, 0.1);
-    --border-hover: rgba(99, 102, 241, 0.3);
+    --border-color: rgba(15, 23, 42, 0.1);
+    --border-hover: rgba(37, 99, 235, 0.3);
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.3);
+    /* Shadows - Subtle */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -58,23 +58,23 @@
     --radius-xl: 1.5rem;
 }
 
-/* Light Mode Variables */
-[data-theme="light"] {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --bg-tertiary: #f3f4f6;
-    --bg-card: #ffffff;
+/* Dark Mode Variables (Optional) */
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --bg-card: #1e293b;
 
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --text-tertiary: #6b7280;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
 
-    --border-color: rgba(0, 0, 0, 0.1);
-    --border-hover: rgba(99, 102, 241, 0.3);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(37, 99, 235, 0.4);
 
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* ===================================
@@ -210,15 +210,15 @@ button {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(10, 14, 39, 0.8);
+    background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     transition: all var(--transition-base);
 }
 
 .navbar.scrolled {
-    background-color: rgba(10, 14, 39, 0.95);
-    box-shadow: var(--shadow-md);
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
@@ -350,53 +350,10 @@ button {
     right: 0;
     bottom: 0;
     z-index: 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #dbeafe 100%);
 }
 
-.gradient-orb {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6;
-    animation: float 20s ease-in-out infinite;
-}
-
-.orb-1 {
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
-    top: -200px;
-    left: -200px;
-}
-
-.orb-2 {
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
-    top: 50%;
-    right: -200px;
-    animation-delay: -5s;
-}
-
-.orb-3 {
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
-    bottom: -200px;
-    left: 50%;
-    animation-delay: -10s;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-        transform: translate(50px, -50px) scale(1.1);
-    }
-
-    66% {
-        transform: translate(-50px, 50px) scale(0.9);
-    }
-}
+/* Removed floating orb animations for cleaner professional look */
 
 .hero-container {
     position: relative;
@@ -421,16 +378,13 @@ button {
     align-items: center;
     gap: var(--spacing-xs);
     padding: var(--spacing-xs) var(--spacing-md);
-    background-color: rgba(99, 102, 241, 0.25);
-    /* Increased opacity for better visibility */
-    border: 1px solid rgba(99, 102, 241, 0.6);
-    /* brighter border */
+    background-color: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.2);
     border-radius: 50px;
     color: var(--accent-primary);
     font-size: 0.875rem;
     font-weight: 500;
     width: fit-content;
-    box-shadow: 0 0 15px rgba(99, 102, 241, 0.1);
 }
 
 .hero-title {
@@ -476,12 +430,12 @@ button {
 .btn-primary {
     background: var(--gradient-primary);
     color: white;
-    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .btn-secondary {
@@ -492,7 +446,7 @@ button {
 
 .btn-secondary:hover {
     border-color: var(--accent-primary);
-    background-color: rgba(99, 102, 241, 0.1);
+    background-color: rgba(37, 99, 235, 0.05);
 }
 
 .hero-stats {
@@ -667,8 +621,8 @@ button {
 .section-tag {
     display: inline-block;
     padding: var(--spacing-xs) var(--spacing-md);
-    background-color: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    background-color: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.2);
     border-radius: 50px;
     color: var(--accent-primary);
     font-size: 0.875rem;
@@ -855,9 +809,9 @@ button {
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     border-color: var(--accent-primary);
-    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
 }
 
 .project-header {
@@ -887,15 +841,15 @@ button {
 }
 
 .status-mvp {
-    background-color: rgba(59, 130, 246, 0.1);
-    color: #3b82f6;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    background-color: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border: 1px solid rgba(37, 99, 235, 0.3);
 }
 
 .status-complete {
-    background-color: rgba(34, 197, 94, 0.1);
-    color: #22c55e;
-    border: 1px solid rgba(34, 197, 94, 0.3);
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .project-title {
@@ -1014,7 +968,7 @@ button {
 }
 
 .skill-item:hover {
-    background-color: rgba(99, 102, 241, 0.1);
+    background-color: rgba(37, 99, 235, 0.08);
     transform: translateX(4px);
 }
 
@@ -1086,8 +1040,8 @@ button {
 .achievement-year {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.3);
+    background-color: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.3);
     border-radius: 50px;
     font-size: 0.75rem;
     font-weight: 600;

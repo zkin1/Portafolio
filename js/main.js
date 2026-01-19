@@ -240,25 +240,22 @@ function initTypingEffect() {
 // ===================================
 // EFECTO PARALLAX PARA ORBES DE GRADIENTE
 // ===================================
-function initParallax() {
-    const orbs = document.querySelectorAll('.gradient-orb');
+// Removed for better performance - parallax effects can cause jank
+// function initParallax() {
+//     const orbs = document.querySelectorAll('.gradient-orb');
+//     window.addEventListener('mousemove', (e) => {
+//         const mouseX = e.clientX / window.innerWidth;
+//         const mouseY = e.clientY / window.innerHeight;
+//         orbs.forEach((orb, index) => {
+//             const speed = (index + 1) * 20;
+//             const x = (mouseX - 0.5) * speed;
+//             const y = (mouseY - 0.5) * speed;
+//             orb.style.transform = `translate(${x}px, ${y}px)`;
+//         });
+//     });
+// }
 
-    window.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX / window.innerWidth;
-        const mouseY = e.clientY / window.innerHeight;
-
-        orbs.forEach((orb, index) => {
-            const speed = (index + 1) * 20;
-            const x = (mouseX - 0.5) * speed;
-            const y = (mouseY - 0.5) * speed;
-
-            orb.style.transform = `translate(${x}px, ${y}px)`;
-        });
-    });
-}
-
-// Inicializar efecto parallax
-initParallax();
+// Parallax disabled for professional design and better performance
 
 // ===================================
 // OPTIMIZACIÓN DE RENDIMIENTO
