@@ -336,6 +336,7 @@ button {
     position: relative;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: calc(70px + var(--spacing-xl)) 0 var(--spacing-3xl);
@@ -359,8 +360,10 @@ button {
     position: relative;
     z-index: 1;
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -564,14 +567,12 @@ button {
 
 /* Scroll Indicator */
 .scroll-indicator {
-    position: absolute;
-    bottom: var(--spacing-xl);
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-xs);
+    margin-top: var(--spacing-xl);
     color: var(--text-tertiary);
     font-size: 0.875rem;
 }
